@@ -1,0 +1,58 @@
+<html lang='en'>
+
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link rel='stylesheet' href='/css/styles.css' />
+    <title>Gestus</title>
+  </head>
+
+  <body>
+    {{#unless isLoginPage}}
+      <div>
+        <aside class='menu'>
+          <nav>
+            <ul>
+              <li>
+                <a href='/funcionario'>Funcionários</a>
+                <ul class='submenu'>
+                  <li><a href='/funcionario'>Cadastrar funcionário</a></li>
+                  <li><a href='/funcionario/all'>Visualizar Funcionários</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href='/tasks'>Tarefas</a>
+                <ul class='submenu'>
+                  <li><a href='/tasks'>Nova Tarefa</a></li>
+                  <li><a href='/tasks/pendentes'>Pendentes</a></li>
+                  <li><a href='/tasks/concluidas'>Concluídas</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href='/finance'>Financeiro</a>
+                <ul class='submenu'>
+                  <li><a href='/finance'>Cadastrar Gasto</a></li>
+                  <li><a href='/finance/all'>Visualizar Gastos</a></li>
+                </ul>
+              </li>
+              <li>
+                <a href='/feedback/all'>Feedback</a>
+                <ul class='submenu'>
+                  <li><a href='/feedback/all'>Visualizar Feedbacks</a></li>
+                </ul>
+              </li>
+              <li><a href='/login' class='btn-submit'>Sair</a></li>
+            </ul>
+          </nav>
+        </aside>
+      </div>
+    {{/unless}}
+    <main>
+      {{{body}}}
+    </main>
+    <footer>
+      <p>&copy; 2024 Gerenciador Financeiro. Todos os direitos reservados.</p>
+    </footer>
+  </body>
+
+</html>
