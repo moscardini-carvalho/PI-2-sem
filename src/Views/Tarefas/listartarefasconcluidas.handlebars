@@ -1,0 +1,33 @@
+<header>
+  <h1>Lista de Tarefas Concluídas</h1>
+</header>
+<main>
+  <table>
+    <thead>
+      <tr>
+        <th>Título</th>
+        <th>Descrição</th>
+        <th>Data</th>
+        <th>Prioridade</th>
+        <th>Gerenciar</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each records}}
+        <tr>
+          <td>{{this.titulo}}</td>
+          <td>{{this.descricao}}</td>
+          <td>{{this.data}}</td>
+          <td>{{this.prioridade}}</td>
+          <td>
+            <a href='/tasks/delete/{{this.id}}' class='btn-delete'>Excluir</a>
+          </td>
+        </tr>
+      {{else}}
+        <tr>
+          <td colspan='5'>Nenhuma tarefa concluída encontrada.</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</main>
