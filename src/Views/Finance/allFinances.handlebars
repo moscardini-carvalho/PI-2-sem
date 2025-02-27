@@ -1,0 +1,36 @@
+<header>
+  <h1>Lista de Finanças</h1>
+</header>
+<main>
+  <table>
+    <thead>
+      <tr>
+        <th>DATA</th>
+        <th>Nome</th>
+        <th>Cargo</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+        <th>Alterações</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each records}}
+        <tr>
+          <td>{{this.date}}</td>
+          <td>{{this.name}}</td>
+          <td>{{this.cargo}}</td>
+          <td>{{this.description}}</td>
+          <td>{{this.amount}}</td>
+          <td>
+            <a href='/finance/update/{{this.id}}' class='btn-edit'>Editar</a>
+            <a href='/finance/delete/{{this.id}}' class='btn-delete'>Excluir</a>
+          </td>
+        </tr>
+      {{else}}
+        <tr>
+          <td colspan='6'>Nenhum registro encontrado.</td>
+        </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</main>
