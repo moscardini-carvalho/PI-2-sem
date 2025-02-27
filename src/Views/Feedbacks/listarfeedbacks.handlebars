@@ -1,0 +1,35 @@
+<header>
+  <h1>Lista de Feedbacks</h1>
+</header>
+<main>
+  <table>
+    <thead>
+      <tr>
+        <th>Data</th>
+        <th>Nome do Funcionário</th>
+        <th>Tipo do Feedback</th>
+        <th>Descrição</th>
+        <th>Gerenciar</th>
+      </tr>
+    </thead>
+    <tbody>
+      {{#each records}}
+      <tr>
+        <td>{{this.data}}</td>
+        <td>{{this.Funcionario.nome}}</td>
+        <td>{{this.tipo_feedback}}</td>
+        <td>{{this.descricao}}</td>
+
+        <td>
+          <a href='/feedback/update/{{this.id}}' class='btn-edit'>Editar</a>
+          <a href='/feedback/delete/{{this.id}}' class='btn-delete'>Excluir</a>
+        </td>
+      </tr>
+      {{else}}
+      <tr>
+        <td colspan='6'>Nenhum registro encontrado.</td>
+      </tr>
+      {{/each}}
+    </tbody>
+  </table>
+</main>

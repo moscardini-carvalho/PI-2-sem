@@ -1,0 +1,33 @@
+<div class='container'>
+  <header>
+    <h1>Gerenciar Feedbacks</h1>
+  </header>
+  <main>
+    <section class='expense-form'>
+      <h2>Editando Feedback do Funcionário: {{funcionario.dataValues.nome}}</h2>
+      <form action='/feedback/update' method='post'>
+        <input type="hidden" name="funcionarioId" value="{{funcionario.id}}" />
+        <input type="hidden" name="id" value="{{feedback.id}}" />
+
+        <div class='form-group'>
+          <label for='tipo_feedback'>Tipo do feedback</label>
+          <input type='text' id='tipo_feedback' name='tipo_feedback'
+            placeholder='(Ex: Atestado, Bonificação, Ponto negativo, etc...)' maxlength="32"
+            value="{{feedback.tipo_feedback}}" required />
+        </div>
+        <div class='form-group'>
+          <label for='data'>Data:</label>
+          <input type='text' id='data' name='data' placeholder='Digite a data (ex: 01/01/2024)'
+            value="{{feedback.data}}" maxlength="10" required />
+        </div>
+        <div class='form-group'>
+          <label for='descricao'>Descrição:</label>
+          <input type='text' id='descricao' name='descricao' placeholder='Escreva o feedback'
+            value="{{feedback.descricao}}" maxlength="85" required />
+        </div>
+
+        <button type='submit' class='btn-submit'>Salvar Alterações</button>
+      </form>
+    </section>
+  </main>
+</div>
