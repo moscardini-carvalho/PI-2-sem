@@ -1,0 +1,303 @@
+/* ===============
+   Estilos Gerais
+   ===============*/
+:root {
+  --primary-color: #3498db;
+  --primary-color-dark: #2980b9;
+  --secondary-color: #2c3e50;
+  --highlight-color: #27ae60;
+  --warning-color: #e74c3c;
+  --background-color: #f4f4f9;
+  --text-color: #333;
+  --border-color: #ddd;
+  --shadow-light: rgba(0, 0, 0, 0.1);
+  --shadow-dark: rgba(0, 0, 0, 0.2);
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  overflow-x: hidden;
+}
+
+.container {
+  width: 90%;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px var(--shadow-light);
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 2.5em;
+  color: var(--secondary-color);
+}
+
+main {
+  margin-bottom: 30px;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  font-size: 14px;
+  color: #7f8c8d;
+}
+
+/* ========================
+   Estilos para Formulários
+   ======================== */
+form {
+  background: #f9f9f9;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 2px 6px var(--shadow-light);
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='date'],
+input[type='email'],
+textarea,
+select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.btn-submit {
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  transition: background-color 0.3s;
+}
+
+.btn-submit:hover {
+  background-color: var(--primary-color-dark);
+}
+
+.btn-edit,
+.btn-delete {
+  padding: 8px 12px;
+  border-radius: 4px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-edit {
+  background-color: var(--highlight-color);
+}
+
+.btn-edit:hover {
+  background-color: darken(var(--highlight-color), 10%);
+}
+
+.btn-delete {
+  background-color: var(--warning-color);
+}
+
+.btn-delete:hover {
+  background-color: darken(var(--warning-color), 10%);
+}
+
+/* ====================
+   Estilos para Tabelas
+   ==================== */
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid var(--border-color);
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #ecf0f1;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:hover {
+  background-color: #e0e0e0;
+}
+
+/* =====================
+      Estilos do Menu
+   ===================== */
+nav {
+  background-color: var(--secondary-color);
+  color: #fff;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  z-index: 1000;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav ul li {
+  position: relative;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li a {
+  padding: 10px 15px;
+  color: #fff;
+  text-decoration: none;
+  transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+  background-color: var(--primary-color);
+}
+
+/* Submenu */
+
+nav ul li .submenu {
+  display: none;
+  background-color: var(--primary-color);
+  position: absolute;
+  left: 0;
+  top: 100%;
+  min-width: 150px;
+  z-index: 1000;
+  border-radius: 6px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+nav ul li:hover .submenu {
+  display: block;
+}
+nav ul li .submenu li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li .submenu li a {
+  display: block;
+  padding: 10px 15px;
+  color: #fff;
+  text-decoration: none;
+  background-color: var(--primary-color);
+  transition: background-color 0.3s;
+}
+
+nav ul li .submenu li a:hover {
+  background-color: var(--primary-color-dark);
+}
+
+/* =====================
+    Página de login
+   ===================== */
+
+#loginForm {
+  width: 100%;
+  max-width: 400px;
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 10px var(--shadow-light);
+  margin: 100px auto;
+}
+
+.login-group {
+  margin-bottom: 20px;
+}
+
+.login-group label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--secondary-color);
+  font-weight: 600;
+}
+
+.login-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+.login-group input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.btn-submit {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  display: block;
+  width: 100%;
+  text-align: center;
+  box-sizing: border-box;
+  transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+  background-color: var(--primary-color-dark);
+}
+
